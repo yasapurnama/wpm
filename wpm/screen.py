@@ -55,7 +55,7 @@ class Screen(object):
         # used to reduce CPU usage in the browsing screen.
         self.redraw = True
 
-        min_lines = 12
+        min_lines = 6
         if self.lines < min_lines:
             curses.endwin()
             raise WpmError(
@@ -324,8 +324,10 @@ class Screen(object):
 
     def update_header(self, text):
         """Renders top-bar header."""
-        self.addstr(0, 0, text, Screen.COLOR_STATUS)
-        self.chgat(0, 0, self.columns, Screen.COLOR_STATUS)
+        #self.addstr(0, 0, text, Screen.COLOR_STATUS)
+        #self.chgat(0, 0, self.columns, Screen.COLOR_STATUS)
+        #The header so distractive ;-)
+
         #self.window.chgat(0, 0, self.columns, Screen.COLOR_STATUS)
 
     def set_quote(self, quote):
